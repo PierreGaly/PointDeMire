@@ -7,12 +7,13 @@ public:
     SyntheseReponses();
     void Assigner(std::string reponse);
     void AfficherBilan();
+    void Resultat();
 private:
     int rep1;
     int rep2;
     int rep3;
     int rep4;
-    
+
 };
 
 
@@ -47,14 +48,26 @@ void SyntheseReponses::Assigner (string reponse) {
         std::cout << "Non !" << std::endl;
     }
     return;
-    
+
 }
+
+void SyntheseReponses::Resultat(){
+    if (rep1 > rep2 || rep3 || rep4) {
+        std::cout << "Vous etes Trump" << std::endl;
+    } else if (rep2 > rep1 || rep3 || rep4) {
+        std::cout << "Vous etes Obama" << std::endl;
+    } else if (rep3 > rep1 || rep2 || rep4) {
+        std::cout << "Vous etes Hollande" << std::endl;
+    } else if (rep4 > rep1 || rep2 || rep3) {
+        std::cout << "Vous etes un Gangster !" << std::endl;
+}
+
 
 //Affichage du résultat/ insérer dans la class
 int max(int reponses[], int length)
 {
     int max = reponses[0];
-    
+
     for(int i = 1; i < 4; i++)
     {
         if(reponses[i] > max)
@@ -67,7 +80,7 @@ int main() {
     const int nb_reponses = 4;
     int reponses[nb_reponses];
     SyntheseReponses sr;
-    
+
     //Question 1
     std::cout << "Quelle est ta couleur préférée ?" << std::endl;
     std::cout << "1: Bleue" << std::endl;
@@ -75,10 +88,10 @@ int main() {
     std::cout << "3: Black" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 2
     std::cout << "Tu croises un Méxicain dans la rue:" << std::endl;
     std::cout << "1: Tu lui offre une Fajitas" << std::endl;
@@ -86,10 +99,10 @@ int main() {
     std::cout << "3: Tu continu ton chemin" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 3
     std::cout << "Selon toi l'environnement:" << std::endl;
     std::cout << "1: Important" << std::endl;
@@ -97,10 +110,10 @@ int main() {
     std::cout << "3: Rien foutre je roule en Hummer" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 4
     std::cout << "Es-tu la personne la plus intellignete dans la pièce ?" << std::endl;
     std::cout << "1: Je n'ai pas de temps a accorder a ça" << std::endl;
@@ -108,10 +121,10 @@ int main() {
     std::cout << "3: Bien sure" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 5
     std::cout << "Que choisit tu entre:" << std::endl;
     std::cout << "1: Le pouvoir" << std::endl;
@@ -119,10 +132,10 @@ int main() {
     std::cout << "3: L'argent" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 6
     std::cout << "Lors d'un meeting un mec d'insulte de connard:" << std::endl;
     std::cout << "1: Tu va le voir pour savoir pourquoi il pense ça" << std::endl;
@@ -130,10 +143,10 @@ int main() {
     std::cout << "3: Tu essaye de savoir pourquoi il pense ça, car tu veux t'améliorer" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     //Question 7
     std::cout << "Tu es élu président, quelle est ta première action:" << std::endl;
     std::cout << "1: J'augmente mon salaire !" << std::endl;
@@ -141,12 +154,12 @@ int main() {
     std::cout << "3: J'ouvre des usines de charbon et je baisse les impôts" << std::endl;
     std::cout << "4: Je sort mon .44 Magnum" << std::endl;
     std::cout << "Réponse:" << std::endl;
-    
+
     cin >> reponse;
     sr.Assigner(reponse);
-    
+
     sr.AfficherBilan();
-    
-    
-    
+    sr.Resultat();
+
+
 }
